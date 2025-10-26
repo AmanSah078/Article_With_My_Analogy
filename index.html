@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="hi" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman's Tech Insights | AI, Technology & Career Guidance Articles</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore comprehensive articles on Artificial Intelligence, Machine Learning, Career Guidance, and Technology. Simple explanations with real-life examples by Aman Sah.">
+    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, Career Guidance, Technology, Aman Sah, Tech Articles, Student Guidance, Programming, Coding">
+    <meta name="author" content="Aman Sah">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Aman's Tech Insights | AI & Technology Articles">
+    <meta property="og:description" content="Simple explanations of complex tech concepts with real-life examples">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://amansinsights.com">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXBFKF02N3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXBFKF02N3');
+    </script>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            position: relative;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        /* 3D Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        [data-bs-theme="dark"] .animated-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .floating-shapes {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            animation: float3D 15s infinite linear;
+            opacity: 0.1;
+            filter: blur(1px);
+        }
+
+        .shape-1 {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+        }
+
+        .shape-2 {
+            width: 180px;
+            height: 180px;
+            top: 60%;
+            right: 8%;
+            animation-delay: -3s;
+            background: linear-gradient(45deg, #48dbfb, #ff9ff3);
+        }
+
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            bottom: 15%;
+            left: 15%;
+            animation-delay: -6s;
+            background: linear-gradient(45deg, #feca57, #ff6b6b);
+        }
+
+        .shape-4 {
+            width: 150px;
+            height: 150px;
+            top: 25%;
+            right: 25%;
+            animation-delay: -9s;
+            background: linear-gradient(45deg, #ff9ff3, #48dbfb);
+        }
+
+        .shape-5 {
+            width: 80px;
+            height: 80px;
+            bottom: 35%;
+            left: 65%;
+            animation-delay: -12s;
+            background: linear-gradient(45deg, #48dbfb, #feca57);
+        }
+
+        /* 3D Floating Animation */
+        @keyframes float3D {
+            0%, 100% {
+                transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+                opacity: 0.1;
+            }
+            25% {
+                transform: translate3d(20px, -30px, 50px) rotate(90deg) scale(1.1);
+                opacity: 0.15;
+            }
+            50% {
+                transform: translate3d(-15px, 20px, -30px) rotate(180deg) scale(0.9);
+                opacity: 0.2;
+            }
+            75% {
+                transform: translate3d(30px, 15px, 40px) rotate(270deg) scale(1.05);
+                opacity: 0.15;
+            }
+        }
+
+        /* Dark Mode Specific Styles */
+        [data-bs-theme="dark"] {
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .section-bg {
+            background: rgba(13, 17, 23, 0.95) !important;
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .footer {
+            background: rgba(13, 17, 23, 0.95) !important;
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .text-muted {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        [data-bs-theme="dark"] .glass-card {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        [data-bs-theme="dark"] .form-select {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+/* Form Select Styling - FIXED */
+.form-select {
+    background-color: white;
+    border: 1px solid #ced4da;
+    color: #495057;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Light Mode Options */
+.form-select option {
+    background: white !important;
+    color: #000000 !important;
+    padding: 10px;
+}
+
+[data-bs-theme="dark"] .form-select {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Dark Mode Options */
+[data-bs-theme="dark"] .form-select option {
+    background: #2d3748 !important;
+    color: #ffffff !important;
+    padding: 10px;
+}
+        /* Navigation */
+        .glass-navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        [data-bs-theme="dark"] .glass-navbar {
+            background: rgba(13, 17, 23, 0.95) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-brand {
+            color: #667eea !important;
+            font-weight: bold;
+        }
+
+        [data-bs-theme="dark"] .navbar-brand {
+            color: #ffffff !important;
+        }
+
+        .nav-link {
+            color: #333 !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        [data-bs-theme="dark"] .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #667eea !important;
+            transform: translateY(-2px);
+        }
+
+        [data-bs-theme="dark"] .nav-link:hover, 
+        [data-bs-theme="dark"] .nav-link.active {
+            color: #ffffff !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: transparent;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+            z-index: -1;
+        }
+
+        [data-bs-theme="dark"] .hero-section::before {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Glass Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Section Background */
+        .section-bg {
+            background: rgba(248, 249, 250, 0.9);
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Floating Cards Animation */
+        .floating-card {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .card-1 { animation-delay: 0s; }
+        .card-2 { animation-delay: 1s; }
+        .card-3 { animation-delay: 2s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #333;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        [data-bs-theme="dark"] .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(180deg);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Stats */
+        .stat-number {
+            color: #ff6b00;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        [data-bs-theme="dark"] .stat-label {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid #ff6b00;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Ensure all sections are visible */
+        section {
+            position: relative;
+            z-index: 2;
+            padding: 80px 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(248, 249, 250, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Feedback Section */
+        .feedback-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        [data-bs-theme="dark"] .feedback-section {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+        }
+
+        .feedback-form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 10px;
+            color: #333;
+            backdrop-filter: blur(10px);
+        }
+
+        [data-bs-theme="dark"] .feedback-form {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Social Links */
+        .social-links .btn {
+            background-color: transparent;
+            border: 2px solid #0d6efd;
+            color: #0d6efd;
+            transition: all 0.3s ease;
+        }
+
+        .social-links .btn:hover {
+            background-color: #0d6efd;
+            color: #fff;
+        }
+
+        [data-bs-theme="dark"] .social-links .btn {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .social-links .btn:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Star Rating Styles */
+        .stars {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .star-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .star-option input[type="radio"] {
+            display: none;
+        }
+
+        .star-option label {
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        [data-bs-theme="dark"] .star-option label {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .star-option input[type="radio"]:checked + label {
+            background: #28a745;
+            color: white;
+        }
+
+        .star-option label:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-bs-theme="dark"] .star-option label:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Form Select Styling */
+        .form-select {
+            background-color: white;
+            border: 1px solid #ced4da;
+            color: #495057;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+
+        [data-bs-theme="dark"] .form-select {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+
+        /* Blockquote Dark Mode */
+        [data-bs-theme="dark"] .blockquote {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        [data-bs-theme="dark"] .blockquote-footer {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem !important;
+            }
+            
+            .floating-card {
+                position: relative !important;
+                margin-bottom: 20px;
+            }
+            
+            .hero-visual {
+                height: 300px !important;
+            }
+            
+            .cta-actions {
+                text-align: center;
+            }
+            
+            .cta-actions .btn {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+
+        /* Custom Button Styles */
+        .btn-light {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border: none;
+        }
+
+        .btn-light:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        [data-bs-theme="dark"] .btn-outline-primary {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .btn-outline-primary:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <!-- 3D Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <span class="logo-emoji me-2">🚀</span>
+                <span class="brand-text fw-bold">Aman's Insights</span>
+            </a>
+            
+            <div class="d-flex align-items-center">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle me-3" id="themeToggle">
+                    <i class="bi bi-sun-fill"></i>
+                </button>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#articles">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pdf-articles">PDFs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <div class="floating-emoji mb-4" style="font-size: 4rem;">🤖</div>
+                        
+                        <h1 class="hero-title display-4 fw-bold mb-4">
+                            <span class="d-block">Making Technology</span>
+                            <span class="d-block gradient-text">Understandable</span>
+                            <span class="d-block">For Everyone</span>
+                        </h1>
+                        
+                        <p class="hero-subtitle lead mb-5">
+                            Exploring AI, Career Guidance & Technology through simple explanations 
+                            and real-life examples that actually make sense.
+                        </p>
+
+                        <!-- Dynamic Stats -->
+                        <div class="row mb-5">
+                            <div class="col-4">
+                                <div class="text-center">
+                                    <div class="stat-number h3 fw-bold" id="articlesCount">
+                                        <span class="loading"></span>
+                                    </div>
+                                    <div class="stat-label">Articles</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="text-center">
+                                    <div class="stat-number h3 fw-bold" id="visitorsCount">
+                                        <span class="loading"></span>
+                                    </div>
+                                    <div class="stat-label">Visitors</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="text-center">
+                                    <div class="stat-number h3 fw-bold" id="averageRating">
+                                        <span class="loading"></span>
+                                    </div>
+                                    <div class="stat-label">Rating</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="cta-actions">
+                            <button class="btn btn-light btn-lg me-3 px-4" id="browseBtn">
+                                <i class="bi bi-book me-2"></i>Browse All Articles
+                            </button>
+                            <button class="btn btn-outline-light btn-lg px-4" id="subscribeBtn">
+                                <i class="bi bi-envelope me-2"></i>Subscribe to Updates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="hero-visual position-relative" style="height: 400px;">
+                        <!-- Floating Cards -->
+                        <div class="floating-card card-1 position-absolute glass-card p-3 rounded-3" style="top: 20px; left: 20px;">
+                            <div class="card-icon h1 mb-2">🎯</div>
+                            <p class="mb-0 fw-semibold">Career Guidance</p>
+                        </div>
+                        <div class="floating-card card-2 position-absolute glass-card p-3 rounded-3" style="top: 120px; right: 40px;">
+                            <div class="card-icon h1 mb-2">🤖</div>
+                            <p class="mb-0 fw-semibold">AI Explained</p>
+                        </div>
+                        <div class="floating-card card-3 position-absolute glass-card p-3 rounded-3" style="bottom: 40px; left: 100px;">
+                            <div class="card-icon h1 mb-2">💡</div>
+                            <p class="mb-0 fw-semibold">Tech Insights</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 section-bg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="about-content">
+                        <h2 class="display-5 fw-bold mb-4">Hello, I'm Aman! Hope u r doing well 👋</h2>
+                        <p class="lead mb-4">
+                            I break down complex technology concepts into simple, understandable pieces using 
+                            real-life examples and relatable analogies that actually make sense.
+                        </p>
+                        
+                        <blockquote class="blockquote border-start border-3 border-primary ps-3">
+                            <p class="fst-italic text-muted">
+                                "If you can't explain it over chai, you don't really understand it."
+                            </p>
+                            <footer class="blockquote-footer mt-2">Aman Sah</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 text-center">
+                    <div class="about-visual">
+                        <div class="avatar-circle glass-card rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 200px; height: 200px;">
+                            <span class="avatar-emoji h1">👨‍💻</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="py-5 section-bg">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title display-5 fw-bold mb-3">Featured Articles</h2>
+                    <p class="section-subtitle lead text-muted">Latest insights on technology and career development</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-12">
+                    <article class="featured-article glass-card p-4 rounded-4">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <span class="badge bg-danger mb-3">🔥 Featured</span>
+                                <h3 class="h2 fw-bold mb-3">AI IN EVERYDAY LIFE: OPPORTUNITIES AND CHALLENGES</h3>
+                                <p class="lead mb-4">
+                                    Complete guide to understanding Artificial Intelligence in daily life with real examples, 
+                                    career insights, and practical applications. Learn how AI impacts your daily routine.
+                                </p>
+                                <div class="article-meta d-flex gap-4 mb-4">
+                                    <span class="text-muted"><i class="bi bi-clock me-1"></i>15 min read</span>
+                                    <span class="text-muted"><i class="bi bi-tag me-1"></i>AI & Technology</span>
+                                    <span class="text-muted"><i class="bi bi-calendar me-1"></i>Dec 2025</span>
+                                </div>
+                                <a href="pdf/Al_in_Everyday_Life_Opportunities_and_Challenges.pdf" target="_blank" class="btn btn-primary btn-lg">
+                                    Read Full Article <i class="bi bi-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <div class="article-visual h1" style="font-size: 8rem;">🤖</div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PDF Section -->
+    <section id="pdf-articles" class="py-5 section-bg">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title display-5 fw-bold mb-3">PDF Articles & Resources</h2>
+                    <p class="section-subtitle lead text-muted">Download comprehensive guides and articles in PDF format</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="featured-pdf glass-card p-4 rounded-4">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <span class="badge bg-danger mb-3">📚 Featured PDF</span>
+                                <h3 class="h2 fw-bold mb-3">AI IN EVERYDAY LIFE: Complete Guide</h3>
+                                <p class="lead mb-4">
+                                    12-page comprehensive guide covering AI opportunities, challenges, career guidance, 
+                                    and real-life examples. Perfect for students and professionals.
+                                </p>
+                                <div class="pdf-meta d-flex gap-4 mb-4">
+                                    <span class="text-muted"><i class="bi bi-file-pdf me-1"></i>PDF Document</span>
+                                    <span class="text-muted"><i class="bi bi-clock me-1"></i>12 Pages</span>
+                                </div>
+                                <div class="pdf-actions">
+                                    <a href="pdf/Al_in_Everyday_Life_Opportunities_and_Challenges.pdf" target="_blank" class="btn btn-primary btn-lg me-3">
+                                        <i class="bi bi-eye me-2"></i>View PDF
+                                    </a>
+                                    <a href="pdf/Al_in_Everyday_Life_Opportunities_and_Challenges.pdf" download="AI_in_Everyday_Life.pdf" class="btn btn-outline-primary btn-lg">
+                                        <i class="bi bi-download me-2"></i>Download
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <div class="pdf-preview position-relative">
+                                    <div class="pdf-icon display-1 text-danger mb-3">
+                                        <i class="bi bi-file-earmark-pdf"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="cta-content glass-card p-5 rounded-4">
+                        <h2 class="display-6 fw-bold mb-3">Ready to Explore More?</h2>
+                        <p class="lead mb-4 text-muted">
+                            Join thousands of readers who are transforming their understanding of technology 
+                            and building successful careers.
+                        </p>
+                        <div class="cta-actions">
+                            <button class="btn btn-primary btn-lg me-3 px-4" id="finalBrowseBtn">
+                                <i class="bi bi-book me-2"></i>Browse All Articles
+                            </button>
+                            <button class="btn btn-outline-primary btn-lg px-4" id="finalSubscribeBtn">
+                                <i class="bi bi-envelope me-2"></i>Subscribe to Updates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand mb-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="logo-emoji me-2">🚀</span>
+                            <span class="h5 fw-bold mb-0">Aman's Insights</span>
+                        </div>
+                        <p class="text-muted">
+                            Making technology understandable for everyone through simple explanations 
+                            and real-life examples.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#articles" class="text-muted text-decoration-none">Articles</a></li>
+                        <li class="mb-2"><a href="#pdf-articles" class="text-muted text-decoration-none">PDFs</a></li>
+                        <li class="mb-2"><a href="#about" class="text-muted text-decoration-none">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold mb-3">Connect</h5>
+                    <div class="social-links">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=amanalisiwan22@gmail.com" 
+                           target="_blank" 
+                           class="btn btn-outline-primary btn-sm me-2 mb-2">
+                            <i class="bi bi-envelope me-1"></i>Gmail
+                        </a>
+                        <a href="https://www.linkedin.com/in/aman-ali-82053a2b8/" class="btn btn-outline-primary btn-sm me-2 mb-2" target="_blank">
+                            <i class="bi bi-linkedin me-1"></i>LinkedIn
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Newsletter</h5>
+                    <div class="newsletter">
+                        <p class="text-muted small mb-3">Get latest articles directly in your inbox</p>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email" id="newsletterEmail">
+                            <button class="btn btn-primary" type="button" id="newsletterBtn">
+                                <i class="bi bi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Section -->
+            <div class="feedback-section mt-5">
+                <div class="feedback-header text-center mb-4">
+                    <h3>📝 Your Feedback Matters!</h3>
+                    <p>How was your learning experience with this topic?</p>
+                </div>
+
+                <!-- WORKING FORMSPREE FORM -->
+                <form action="https://formspree.io/f/movpqvdb" method="POST" class="feedback-form" id="feedbackForm">
+                    <!-- Hidden Fields for Better Formspree Integration -->
+                    <input type="hidden" name="_subject" value="New Feedback from Aman's Website">
+                    <input type="hidden" name="_replyto" value="amanalisiwan22@gmail.com">
+                    <input type="hidden" name="_cc" value="amanalisiwan22@gmail.com">
+                    
+                    <!-- Rating Section -->
+                    <div class="stars mb-4">
+                        <div class="star-option">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5">⭐⭐⭐⭐⭐ <strong>Excellent</strong></label>
+                        </div>
+                        <div class="star-option">
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4">⭐⭐⭐⭐ <strong>Very Good</strong></label>
+                        </div>
+                        <div class="star-option">
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3">⭐⭐⭐ <strong>Good</strong></label>
+                        </div>
+                        <div class="star-option">
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2">⭐⭐ <strong>Average</strong></label>
+                        </div>
+                        <div class="star-option">
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1">⭐ <strong>Poor</strong></label>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Message -->
+                    <div class="message-section mb-4">
+                        <label for="message" class="form-label fw-bold">Your Detailed Feedback:</label>
+                        <textarea id="message" name="message" class="form-control" placeholder="What did you like? What can be improved? Any specific topics you want next?" rows="4"></textarea>
+                    </div>
+
+                    <!-- Next Topic Suggestion - FIXED SELECT -->
+                    <div class="suggestion-section mb-4">
+                        <label for="next_topic" class="form-label fw-bold">Hey! What should I cover next?</label>
+                        <select id="next_topic" name="next_topic" class="form-select">
+                            <option value="">Select your preferred next topic</option>
+                            <option value="AI Fundamentals">AI Fundamentals</option>
+                            <option value="Large Language Models & Prompt Engineering">Large Language Models & Prompt Engineering</option>
+                            <option value="Data Science & Visualization">Data Science & Visualization</option>
+                            <option value="NLP Basics">NLP Basics</option>
+                            <option value="Generative AI">Generative AI</option>
+                            <option value="Augmented & Virtual Reality (AR/VR)">Augmented & Virtual Reality (AR/VR)</option>
+                            <option value="Internet of Things (IoT)">Internet of Things (IoT)</option>
+                            <option value="Blockchain & Web3">Blockchain & Web3</option>
+                            <option value="Edge Computing">Edge Computing</option>
+                            <option value="Microservices Architecture">Microservices Architecture</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn">
+                        🚀 Submit Feedback
+                    </button>
+                </form>
+            </div>
+
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted mb-0">
+                        &copy; 2025 Aman's Tech Insights. All rights reserved. | 
+                        Made with <i class="bi bi-heart-fill text-danger"></i> for the tech community
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Real Stats Management
+        class StatsManager {
+            constructor() {
+                this.articles = 1; // Fixed as per your requirement
+                this.visitors = 0;
+                this.rating = 0;
+                this.feedbackCount = 0;
+                this.totalRating = 0;
+            }
+
+            // Initialize stats from localStorage or set defaults
+            initializeStats() {
+                const savedStats = localStorage.getItem('websiteStats');
+                if (savedStats) {
+                    const stats = JSON.parse(savedStats);
+                    this.visitors = stats.visitors || 0;
+                    this.feedbackCount = stats.feedbackCount || 0;
+                    this.totalRating = stats.totalRating || 0;
+                    this.calculateAverageRating();
+                }
+                
+                this.updateDisplay();
+            }
+
+            // Add new rating from feedback
+            addRating(newRating) {
+                this.feedbackCount++;
+                this.totalRating += newRating;
+                this.calculateAverageRating();
+                this.saveStats();
+                this.updateDisplay();
+            }
+
+            // Calculate average rating
+            calculateAverageRating() {
+                this.rating = this.feedbackCount > 0 ? (this.totalRating / this.feedbackCount).toFixed(1) : 0;
+            }
+
+            // Increment visitor count (would be called by Google Analytics in real scenario)
+            incrementVisitors() {
+                this.visitors++;
+                this.saveStats();
+                this.updateDisplay();
+            }
+
+            // Update stats display
+            updateDisplay() {
+                document.getElementById('articlesCount').innerHTML = this.articles;
+                document.getElementById('visitorsCount').innerHTML = this.visitors > 0 ? this.visitors + '+' : '0';
+                document.getElementById('averageRating').innerHTML = this.rating > 0 ? this.rating : '0.0';
+            }
+
+            // Save stats to localStorage
+            saveStats() {
+                const stats = {
+                    visitors: this.visitors,
+                    feedbackCount: this.feedbackCount,
+                    totalRating: this.totalRating
+                };
+                localStorage.setItem('websiteStats', JSON.stringify(stats));
+            }
+        }
+
+        // Initialize stats manager
+        const statsManager = new StatsManager();
+
+        // Enhanced Theme Toggle with Better Dark Mode
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-bs-theme', theme);
+            themeIcon.className = theme === 'dark' ? 'bi bi-moon-fill' : 'bi bi-sun-fill';
+            localStorage.setItem('theme', theme);
+            
+            // Force redraw for smooth transition
+            document.body.style.opacity = '0.99';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 10);
+        }
+        
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        applyTheme(savedTheme);
+
+        // Button functionality
+        document.getElementById('browseBtn').addEventListener('click', function() {
+            document.getElementById('articles').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('finalBrowseBtn').addEventListener('click', function() {
+            document.getElementById('articles').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('subscribeBtn').addEventListener('click', function() {
+            alert('Subscribe feature coming soon! Thank you for your interest!');
+        });
+
+        document.getElementById('finalSubscribeBtn').addEventListener('click', function() {
+            alert('Subscribe feature coming soon! Thank you for your interest!');
+        });
+
+        document.getElementById('newsletterBtn').addEventListener('click', function() {
+            const email = document.getElementById('newsletterEmail').value;
+            if(email) {
+                alert('Thank you for subscribing! We will keep you updated.');
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                alert('Please enter your email address.');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Formspree Form Handling with Better Integration
+        document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const rating = document.querySelector('input[name="rating"]:checked');
+            const message = document.getElementById('message').value;
+            const nextTopic = document.getElementById('next_topic').value;
+            
+            if (!rating) {
+                alert('Please select a rating before submitting.');
+                return;
+            }
+
+            // Show loading state
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '⏳ Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                // Add rating to local stats
+                const newRating = parseInt(rating.value);
+                statsManager.addRating(newRating);
+                
+                // Submit to Formspree
+                const formData = new FormData(this);
+                
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Show success message
+                    alert('✅ Thank you for your feedback! Your response has been recorded and will help improve the content quality.');
+                    
+                    // Reset form
+                    this.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+                
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('⚠️ There was an issue submitting your feedback. Please try again.');
+            } finally {
+                // Restore button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize stats
+            statsManager.initializeStats();
+            
+            // Simulate loading animation
+            setTimeout(() => {
+                const loadingElements = document.querySelectorAll('.loading');
+                loadingElements.forEach(element => {
+                    element.style.display = 'none';
+                });
+                
+                // Increment visitor count (simulating new visit)
+                statsManager.incrementVisitors();
+            }, 2000);
+
+            // Fix for select dropdown visibility
+            const selectElement = document.getElementById('next_topic');
+            if (selectElement) {
+                selectElement.style.opacity = '1';
+                selectElement.style.visibility = 'visible';
+            }
+
+            // Simulate Google Analytics data (in real scenario, this would come from GA)
+            setTimeout(() => {
+                // This would be replaced with actual GA data
+                console.log('Google Analytics loaded - real visitor data would be here');
+            }, 3000);
+        });
+
+        // Export stats for Google Analytics integration
+        window.getWebsiteStats = function() {
+            return {
+                articles: statsManager.articles,
+                visitors: statsManager.visitors,
+                rating: statsManager.rating,
+                feedbackCount: statsManager.feedbackCount
+            };
+        };
+    </script>
+</body>
+</html>
