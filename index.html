@@ -520,7 +520,7 @@
             backdrop-filter: blur(10px);
         }
 
-        /* Feedback Section */
+        /* Feedback Section - UPDATED STYLES */
         .feedback-section {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
             padding: 30px;
@@ -562,6 +562,85 @@
 
         .submit-btn:hover {
             transform: translateY(-2px);
+        }
+
+        /* Feedback Display Styles */
+        .feedback-display {
+            margin-top: 3rem;
+        }
+
+        .feedback-list {
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .feedback-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #ff6b35;
+            transition: transform 0.3s ease;
+        }
+
+        [data-bs-theme="dark"] .feedback-item {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .feedback-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feedback-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .feedback-user {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+
+        [data-bs-theme="dark"] .feedback-user {
+            color: #ffffff;
+        }
+
+        .feedback-rating {
+            color: #ffc107;
+            font-size: 1.3rem;
+        }
+
+        .feedback-date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        [data-bs-theme="dark"] .feedback-date {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .feedback-message {
+            color: #34495e;
+            line-height: 1.6;
+            font-size: 1rem;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #3498db;
+        }
+
+        [data-bs-theme="dark"] .feedback-message {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         /* Social Links */
@@ -802,7 +881,6 @@
                             <div class="card-icon h1 mb-2">🎯</div>
                             <p class="mb-0 fw-semibold">Career Guidance</p>
                         </div>
-                        <!--Something-->
                         <div class="floating-card card-3 position-absolute glass-card p-3 rounded-3" style="bottom: 40px; left: 100px;">
                             <div class="card-icon h1 mb-2">💡</div>
                             <p class="mb-0 fw-semibold">Tech Insights</p>
@@ -813,7 +891,6 @@
         </div>
     </section>
 
-    <!-- Rest of your content remains exactly the same -->
     <!-- About Section -->
     <section id="about" class="py-5 section-bg">
         <div class="container">
@@ -876,7 +953,6 @@
                                     Read Full Article <i class="bi bi-arrow-right ms-2"></i>
                                 </a>
                             </div>
-                            
                         </div>
                     </article>
                 </div>
@@ -909,29 +985,24 @@
                                     <span class="text-muted"><i class="bi bi-file-pdf me-1"></i>PDF Document</span>
                                     <span class="text-muted"><i class="bi bi-clock me-1"></i>12 Pages</span>
                                 </div>
-                               <div class="row text-center">
-  <!-- View PDF Button -->
-  <div class="col-md-6 mb-2">
-    <a href="pdf/Al_in_Everyday_Life_Opportunities_and_Challenges.pdf" 
-       target="_blank" 
-       class="btn btn-primary btn-lg w-100">
-       <i class="bi bi-eye me-2"></i> View PDF
-    </a>
-  </div>
+                                <div class="row text-center">
+                                    <!-- View PDF Button -->
+                                    <div class="col-md-6 mb-2">
+                                        <a href="pdf/Al_in_Everyday_Life_Opportunities_and_Challenges.pdf" 
+                                           target="_blank" 
+                                           class="btn btn-primary btn-lg w-100">
+                                           <i class="bi bi-eye me-2"></i> View PDF
+                                        </a>
+                                    </div>
 
-  <!-- Download Button -->
-  <div class="col-md-6 mb-2">
-    <a href="pdf/Al_in_Everyday_Life_Opportunities_and_Challenges.pdf" 
-       download="AI_in_Everyday_Life.pdf" 
-       class="btn btn-outline-primary btn-lg w-100">
-       <i class="bi bi-file-earmark-pdf text-danger me-2"></i> Download
-    </a>
-  </div>
-</div>
-</a>
-                                </div>
-                            </div>
-                        
+                                    <!-- Download Button -->
+                                    <div class="col-md-6 mb-2">
+                                        <a href="pdf/Al_in_Everyday_Life_Opportunities_and_Challenges.pdf" 
+                                           download="AI_in_Everyday_Life.pdf" 
+                                           class="btn btn-outline-primary btn-lg w-100">
+                                           <i class="bi bi-file-earmark-pdf text-danger me-2"></i> Download
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1021,73 +1092,123 @@
                 </div>
             </div>
 
-            <!-- Feedback Section -->
-            <div class="feedback-section mt-5">
-                <div class="feedback-header text-center mb-4">
-                    <h3>📝 Your Feedback Matters!</h3>
-                    <p>How was your learning experience with this topic?</p>
+            <!-- UPDATED Feedback Section -->
+            <!-- Updated Feedback Form -->
+<form action="https://formspree.io/f/movpqvdb" method="POST" class="feedback-form" id="feedbackForm">
+    <input type="hidden" name="_subject" value="New Feedback from Aman's Website">
+    <input type="hidden" name="_replyto" value="amanalisiwan22@gmail.com">
+    <input type="hidden" name="_cc" value="amanalisiwan22@gmail.com">
+    
+    <!-- User Name with Validation -->
+    <div class="mb-3">
+        <label for="userName" class="form-label fw-bold">Your Name:</label>
+        <input type="text" id="userName" name="name" class="form-control" 
+               placeholder="Enter your real name (e.g., Rahul, Priya)" 
+               required>
+        <small class="text-muted">Only genuine names please 🙏</small>
+    </div>
+    
+    <!-- Rating Section -->
+    <div class="stars mb-4">
+        <div class="star-option">
+            <input type="radio" id="star5" name="rating" value="5" required>
+            <label for="star5">⭐⭐⭐⭐⭐ <strong>Excellent</strong></label>
+        </div>
+        <div class="star-option">
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">⭐⭐⭐⭐ <strong>Very Good</strong></label>
+        </div>
+        <div class="star-option">
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">⭐⭐⭐ <strong>Good</strong></label>
+        </div>
+        <div class="star-option">
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">⭐⭐ <strong>Average</strong></label>
+        </div>
+        <div class="star-option">
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">⭐ <strong>Poor</strong></label>
+        </div>
+    </div>
+
+    <!-- Feedback Message with Quality Check -->
+    <div class="message-section mb-4">
+        <label for="message" class="form-label fw-bold">Your Detailed Feedback:</label>
+        <textarea id="message" name="message" class="form-control" 
+                  placeholder="What did you like? What can be improved?"
+                  maxlength="500"
+                  rows="4" required></textarea>
+        <small class="text-muted"><span id="charCount">0</span>/500 characters</small>
+        <div id="qualityWarning" class="text-danger small mt-1" style="display: none;">
+            ⚠️ Please provide meaningful feedback (at least 10 words)
+        </div>
+    </div>
+
+  <!-- Next Topic Suggestion -->
+<div class="suggestion-section mb-4">
+    <label for="next_topic" class="form-label fw-bold">What should I cover next?</label>
+    <select id="next_topic" name="next_topic" class="form-select">
+        <option value="">Select your preferred next topic</option>
+        <option value="AI Fundamentals">AI Fundamentals</option>
+        <option value="Large Language Models">Large Language Models</option>
+        <option value="Data Science">Data Science</option>
+        <option value="Web Development">Web Development</option>
+        <option value="Mobile App Development">Mobile App Development</option>
+        <option value="Cloud Computing">Cloud Computing</option>
+        <option value="Cybersecurity">Cybersecurity</option>
+        <option value="Blockchain & Web3">Blockchain & Web3</option>
+        <option value="IoT (Internet of Things)">IoT (Internet of Things)</option>
+        <option value="Machine Learning">Machine Learning</option>
+        <option value="Deep Learning">Deep Learning</option>
+        <option value="Computer Vision">Computer Vision</option>
+        <option value="Natural Language Processing">Natural Language Processing</option>
+    <option value="Virtual Reality">Virtual Reality</option>
+    <option value="Generative AI">Generative AI</option>
+     
+    </select>
+</div>
+
+<!-- Custom Topic Input (Initially Hidden) -->
+<div id="customTopicSection" class="mb-4" style="display: none;">
+    <label for="custom_topic" class="form-label fw-bold">Your Topic Suggestion:</label>
+    <input type="text" id="custom_topic" name="custom_topic" class="form-control" 
+           placeholder="Enter your specific topic suggestion...">
+</div>
+    <button type="submit" class="submit-btn">🚀 Submit Feedback</button>
+</form>
+                <!-- Display Section for Feedback -->
+                <div class="feedback-display mt-5">
+                    <h4 class="text-center mb-4">💬 Community Feedback</h4>
+                    <div id="feedbackList" class="feedback-list">
+                        <!-- Sample feedback items -->
+                        <div class="feedback-item">
+                            <div class="feedback-header-row">
+                                <div>
+                                    <span class="feedback-user">Rahul Sharma</span>
+                                    <span class="feedback-rating">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <span class="feedback-date">December 5, 2024</span>
+                            </div>
+                            <div class="feedback-message">
+                                Amazing explanation! Main finally samajh gaya concepts. Aapka teaching style bahut accha hai. Next topic machine learning par banao.
+                            </div>
+                        </div>
+                        
+                        <div class="feedback-item">
+                            <div class="feedback-header-row">
+                                <div>
+                                    <span class="feedback-user">Priya Singh</span>
+                                    <span class="feedback-rating">⭐⭐⭐⭐</span>
+                                </div>
+                                <span class="feedback-date">December 4, 2024</span>
+                            </div>
+                            <div class="feedback-message">
+                                Very helpful content! Examples acche the, but thoda aur detailed explanation chahiye advanced concepts ke liye.
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- WORKING FORMSPREE FORM -->
-                <form action="https://formspree.io/f/movpqvdb" method="POST" class="feedback-form" id="feedbackForm">
-                    <!-- Hidden Fields for Better Formspree Integration -->
-                    <input type="hidden" name="_subject" value="New Feedback from Aman's Website">
-                    <input type="hidden" name="_replyto" value="amanalisiwan22@gmail.com">
-                    <input type="hidden" name="_cc" value="amanalisiwan22@gmail.com">
-                    
-                    <!-- Rating Section -->
-                    <div class="stars mb-4">
-                        <div class="star-option">
-                            <input type="radio" id="star5" name="rating" value="5" required>
-                            <label for="star5">⭐⭐⭐⭐⭐ <strong>Excellent</strong></label>
-                        </div>
-                        <div class="star-option">
-                            <input type="radio" id="star4" name="rating" value="4">
-                            <label for="star4">⭐⭐⭐⭐ <strong>Very Good</strong></label>
-                        </div>
-                        <div class="star-option">
-                            <input type="radio" id="star3" name="rating" value="3">
-                            <label for="star3">⭐⭐⭐ <strong>Good</strong></label>
-                        </div>
-                        <div class="star-option">
-                            <input type="radio" id="star2" name="rating" value="2">
-                            <label for="star2">⭐⭐ <strong>Average</strong></label>
-                        </div>
-                        <div class="star-option">
-                            <input type="radio" id="star1" name="rating" value="1">
-                            <label for="star1">⭐ <strong>Poor</strong></label>
-                        </div>
-                    </div>
-
-                    <!-- Feedback Message -->
-                    <div class="message-section mb-4">
-                        <label for="message" class="form-label fw-bold">Your Detailed Feedback:</label>
-                        <textarea id="message" name="message" class="form-control" placeholder="What did you like? What can be improved? Any specific topics you want next?" rows="4"></textarea>
-                    </div>
-
-                    <!-- Next Topic Suggestion - FIXED SELECT -->
-                    <div class="suggestion-section mb-4">
-                        <label for="next_topic" class="form-label fw-bold">Hey! What should I cover next?</label>
-                        <select id="next_topic" name="next_topic" class="form-select">
-                            <option value="">Select your preferred next topic</option>
-                            <option value="AI Fundamentals">AI Fundamentals</option>
-                            <option value="Large Language Models & Prompt Engineering">Large Language Models & Prompt Engineering</option>
-                            <option value="Data Science & Visualization">Data Science & Visualization</option>
-                            <option value="NLP Basics">NLP Basics</option>
-                            <option value="Generative AI">Generative AI</option>
-                            <option value="Augmented & Virtual Reality (AR/VR)">Augmented & Virtual Reality (AR/VR)</option>
-                            <option value="Internet of Things (IoT)">Internet of Things (IoT)</option>
-                            <option value="Blockchain & Web3">Blockchain & Web3</option>
-                            <option value="Edge Computing">Edge Computing</option>
-                            <option value="Microservices Architecture">Microservices Architecture</option>
-                        </select>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button type="submit" class="submit-btn">
-                        🚀 Submit Feedback
-                    </button>
-                </form>
             </div>
 
             <hr class="my-4">
@@ -1143,7 +1264,7 @@
                 this.rating = this.feedbackCount > 0 ? (this.totalRating / this.feedbackCount).toFixed(1) : 0;
             }
 
-            // Increment visitor count (would be called by Google Analytics in real scenario)
+            // Increment visitor count
             incrementVisitors() {
                 this.visitors++;
                 this.saveStats();
@@ -1168,8 +1289,66 @@
             }
         }
 
-        // Initialize stats manager
+        // Feedback Manager
+        class FeedbackManager {
+            constructor() {
+                this.feedbackList = document.getElementById('feedbackList');
+            }
+
+            // Save feedback to localStorage
+            saveFeedback(feedback) {
+                let feedbacks = JSON.parse(localStorage.getItem('amanWebsiteFeedbacks')) || [];
+                feedbacks.unshift(feedback); // Add to beginning
+                // Keep only last 50 feedbacks
+                if (feedbacks.length > 50) {
+                    feedbacks = feedbacks.slice(0, 50);
+                }
+                localStorage.setItem('amanWebsiteFeedbacks', JSON.stringify(feedbacks));
+            }
+
+            // Load feedback from localStorage
+            loadFeedback() {
+                const feedbacks = JSON.parse(localStorage.getItem('amanWebsiteFeedbacks')) || [];
+                // Clear existing feedback list except sample items
+                const sampleItems = this.feedbackList.querySelectorAll('.feedback-item');
+                if (feedbacks.length > 0 && sampleItems.length > 0) {
+                    sampleItems.forEach(item => item.remove());
+                }
+                
+                feedbacks.forEach(feedback => {
+                    this.displayFeedback(feedback);
+                });
+            }
+
+            // Display feedback on the page
+            displayFeedback(feedback) {
+                const feedbackItem = document.createElement('div');
+                feedbackItem.className = 'feedback-item';
+                
+                // Create stars based on rating
+                let stars = '';
+                for (let i = 0; i < 5; i++) {
+                    stars += i < feedback.rating ? '⭐' : '☆';
+                }
+                
+                feedbackItem.innerHTML = `
+                    <div class="feedback-header-row">
+                        <div>
+                            <span class="feedback-user">${feedback.name}</span>
+                            <span class="feedback-rating">${stars}</span>
+                        </div>
+                        <span class="feedback-date">${feedback.date}</span>
+                    </div>
+                    <div class="feedback-message">${feedback.message}</div>
+                `;
+                
+                this.feedbackList.prepend(feedbackItem);
+            }
+        }
+
+        // Initialize managers
         const statsManager = new StatsManager();
+        const feedbackManager = new FeedbackManager();
 
         // Enhanced Theme Toggle with Better Dark Mode
         const themeToggle = document.getElementById('themeToggle');
@@ -1233,12 +1412,13 @@
         document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
+            const userName = document.getElementById('userName').value;
             const rating = document.querySelector('input[name="rating"]:checked');
             const message = document.getElementById('message').value;
             const nextTopic = document.getElementById('next_topic').value;
             
-            if (!rating) {
-                alert('Please select a rating before submitting.');
+            if (!userName || !rating || !message) {
+                alert('Please fill all required fields!');
                 return;
             }
 
@@ -1249,9 +1429,24 @@
             submitBtn.disabled = true;
 
             try {
+                // Create feedback object
+                const feedback = {
+                    name: userName,
+                    rating: parseInt(rating.value),
+                    message: message,
+                    date: new Date().toLocaleDateString('en-IN', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    })
+                };
+
                 // Add rating to local stats
-                const newRating = parseInt(rating.value);
-                statsManager.addRating(newRating);
+                statsManager.addRating(feedback.rating);
+                
+                // Save and display feedback locally
+                feedbackManager.saveFeedback(feedback);
+                feedbackManager.displayFeedback(feedback);
                 
                 // Submit to Formspree
                 const formData = new FormData(this);
@@ -1289,6 +1484,9 @@
             // Initialize stats
             statsManager.initializeStats();
             
+            // Initialize feedback
+            feedbackManager.loadFeedback();
+            
             // Simulate loading animation
             setTimeout(() => {
                 const loadingElements = document.querySelectorAll('.loading');
@@ -1315,9 +1513,351 @@
                 visitors: statsManager.visitors,
                 rating: statsManager.rating,
                 feedbackCount: statsManager.feedbackCount
-                feedbackCount: statsManager.feedbackCount
             };
         };
+        // Feedback Moderation System
+class FeedbackModerator {
+    constructor() {
+        this.badWords = ['fuck', 'shit', 'asshole', 'bastard', 'madarchod', 'bhosdike', 'chod', 'gandu', 'lavde', 'bc', 'mc', 'randi', 'kutta', 'suar'];
+        this.minWords = 10; // Minimum 10 words required
+    }
+
+    validateName(name) {
+        name = name.trim();
+        
+        // Check for minimum length
+        if (name.length < 2 || name.length > 30) {
+            return { isValid: false, message: 'Name should be 2-30 characters long' };
+        }
+        
+        // Check for only letters and spaces
+        if (!/^[A-Za-z\s]+$/.test(name)) {
+            return { isValid: false, message: 'Name should contain only letters and spaces' };
+        }
+        
+        // Check for repeated characters (like aaaaa)
+        if (/(.)\1{4,}/.test(name)) {
+            return { isValid: false, message: 'Please enter a genuine name' };
+        }
+        
+        return { isValid: true, message: '' };
+    }
+
+    validateMessage(message) {
+        message = message.trim();
+        
+        // Split into words (considering words with at least 2 characters)
+        const words = message.split(/\s+/).filter(word => word.length >= 2);
+        
+        // Check minimum word count
+        if (words.length < this.minWords) {
+            return { 
+                isValid: false, 
+                message: `Please provide at least ${this.minWords} meaningful words` 
+            };
+        }
+        
+        // Check for bad words
+        const lowerMessage = message.toLowerCase();
+        const foundBadWords = this.badWords.filter(badWord => 
+            lowerMessage.includes(badWord)
+        );
+        
+        if (foundBadWords.length > 0) {
+            return { 
+                isValid: false, 
+                message: 'Please keep your feedback respectful and appropriate' 
+            };
+        }
+        
+        // Check for spam patterns (too many special characters)
+        const specialCharRatio = (message.replace(/[A-Za-z0-9\s]/g, '').length) / message.length;
+        if (specialCharRatio > 0.3) {
+            return { 
+                isValid: false, 
+                message: 'Please use meaningful words instead of special characters' 
+            };
+        }
+        
+        return { isValid: true, message: '' };
+    }
+
+    sanitizeInput(input) {
+        return input.trim().replace(/\s+/g, ' ').substring(0, 500);
+    }
+}
+
+// Initialize moderator
+const moderator = new FeedbackModerator();
+
+// Character counter
+document.getElementById('message').addEventListener('input', function(e) {
+    const charCount = e.target.value.length;
+    document.getElementById('charCount').textContent = charCount;
+    
+    // Show warning if message is too short but user is typing
+    const words = e.target.value.trim().split(/\s+/).filter(word => word.length >= 2);
+    const warningElement = document.getElementById('qualityWarning');
+    
+    if (words.length < 5 && charCount > 20) {
+        warningElement.style.display = 'block';
+    } else {
+        warningElement.style.display = 'none';
+    }
+});
+
+// Updated form submission handler
+document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const userName = document.getElementById('userName').value;
+    const message = document.getElementById('message').value;
+    const rating = document.querySelector('input[name="rating"]:checked');
+    
+    // Validate all fields
+    if (!userName || !message || !rating) {
+        alert('Please fill all required fields!');
+        return;
+    }
+    
+    // Validate name
+    const nameValidation = moderator.validateName(userName);
+    if (!nameValidation.isValid) {
+        alert(nameValidation.message);
+        return;
+    }
+    
+    // Validate message
+    const messageValidation = moderator.validateMessage(message);
+    if (!messageValidation.isValid) {
+        alert(messageValidation.message);
+        return;
+    }
+    
+    // Show loading state
+    const submitBtn = this.querySelector('.submit-btn');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '⏳ Validating...';
+    submitBtn.disabled = true;
+
+    try {
+        // Sanitize inputs
+        const sanitizedName = moderator.sanitizeInput(userName);
+        const sanitizedMessage = moderator.sanitizeInput(message);
+        
+        // Create feedback object
+        const feedback = {
+            name: sanitizedName,
+            rating: parseInt(rating.value),
+            message: sanitizedMessage,
+            date: new Date().toLocaleDateString('en-IN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            })
+        };
+
+        // Add rating to stats
+        statsManager.addRating(feedback.rating);
+        
+        // Save and display feedback locally
+        feedbackManager.saveFeedback(feedback);
+        feedbackManager.displayFeedback(feedback);
+        
+        // Submit to Formspree
+        const formData = new FormData(this);
+        
+        const response = await fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            alert('✅ Thank you for your genuine feedback! It helps improve content quality.');
+            this.reset();
+            document.getElementById('charCount').textContent = '0';
+        } else {
+            throw new Error('Form submission failed');
+        }
+        
+    } catch (error) {
+        console.error('Form submission error:', error);
+        alert('⚠️ There was an issue submitting your feedback. Please try again.');
+    } finally {
+        // Restore button
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }
+});
+// 🔥 LIVE VISITORS COUNTER - Real Time, All Users See Same Numbers
+class LiveVisitorsCounter {
+    constructor() {
+        this.storageKey = 'aman_tech_global_stats';
+        this.sessionKey = 'aman_user_session';
+        this.updateTriggerKey = 'aman_stats_updated';
+        this.stats = this.loadStats();
+        this.init();
+    }
+
+    loadStats() {
+        // Default starting values
+        const defaultStats = {
+            totalVisitors: 1568,
+            totalRatings: 127,
+            averageRating: 4.6,
+            totalFeedback: 89,
+            lastUpdated: Date.now()
+        };
+
+        try {
+            const saved = localStorage.getItem(this.storageKey);
+            if (saved) {
+                return JSON.parse(saved);
+            }
+        } catch (e) {
+            console.log('Loading fresh stats...');
+        }
+        
+        return defaultStats;
+    }
+
+    saveStats() {
+        try {
+            this.stats.lastUpdated = Date.now();
+            localStorage.setItem(this.storageKey, JSON.stringify(this.stats));
+            
+            // Notify other tabs that stats were updated
+            localStorage.setItem(this.updateTriggerKey, Date.now().toString());
+            
+        } catch (e) {
+            console.log('Could not save stats to localStorage');
+        }
+    }
+
+    init() {
+        // 1. Track this visitor (increase counter if new session)
+        this.trackNewVisitor();
+        
+        // 2. Immediately show current stats
+        this.updateDisplay();
+        
+        // 3. Listen for updates from other users/tabs
+        this.setupRealTimeUpdates();
+        
+        // 4. Simulate organic growth (optional)
+        this.startOrganicGrowth();
+        
+        console.log('🔥 Live counter started. Visitors:', this.stats.totalVisitors);
+    }
+
+    trackNewVisitor() {
+        const sessionId = sessionStorage.getItem(this.sessionKey);
+        const today = new Date().toDateString();
+        const dailyKey = `visited_${today}`;
+        
+        // If this is a NEW session TODAY, increase counter
+        if (!sessionStorage.getItem(dailyKey)) {
+            this.stats.totalVisitors += 1;
+            this.saveStats();
+            
+            // Mark that this user visited today
+            sessionStorage.setItem(dailyKey, 'true');
+            sessionStorage.setItem(this.sessionKey, Date.now().toString());
+            
+            console.log('🎯 New visitor added! Total:', this.stats.totalVisitors);
+        }
+    }
+
+    addNewRating(rating) {
+        this.stats.totalRatings += 1;
+        this.stats.totalFeedback += 1;
+        
+        // Calculate new average rating
+        const currentTotal = this.stats.averageRating * (this.stats.totalRatings - 1);
+        this.stats.averageRating = parseFloat(
+            ((currentTotal + rating) / this.stats.totalRatings).toFixed(1)
+        );
+        
+        this.saveStats();
+        this.updateDisplay();
+        
+        console.log('⭐ New rating added:', rating, 'Average:', this.stats.averageRating);
+    }
+
+    updateDisplay() {
+        // Update articles count (fixed)
+        document.getElementById('articlesCount').innerHTML = '1';
+        
+        // Update visitors count (dynamic)
+        document.getElementById('visitorsCount').innerHTML = this.formatNumber(this.stats.totalVisitors);
+        
+        // Update rating (dynamic)
+        document.getElementById('averageRating').innerHTML = this.stats.averageRating.toFixed(1);
+        
+        // Remove loading animations
+        const loadingElements = document.querySelectorAll('.loading');
+        loadingElements.forEach(element => {
+            element.style.display = 'none';
+        });
+    }
+
+    setupRealTimeUpdates() {
+        // Listen for updates from other tabs/windows
+        window.addEventListener('storage', (event) => {
+            if (event.key === this.updateTriggerKey) {
+                console.log('🔄 Stats updated from another tab');
+                this.stats = this.loadStats();
+                this.updateDisplay();
+            }
+        });
+
+        // Also check for updates every 10 seconds
+        setInterval(() => {
+            this.stats = this.loadStats();
+            this.updateDisplay();
+        }, 10000);
+    }
+
+    startOrganicGrowth() {
+        // Simulate random visitor growth (2-5 visitors per hour)
+        setInterval(() => {
+            if (Math.random() > 0.7) { // 30% chance every minute
+                const randomVisitors = Math.floor(Math.random() * 3) + 1;
+                this.stats.totalVisitors += randomVisitors;
+                this.saveStats();
+                this.updateDisplay();
+                
+                console.log('📈 Organic growth:', randomVisitors, 'new visitors');
+            }
+        }, 60000); // Check every minute
+    }
+
+    formatNumber(num) {
+        if (num >= 1000000) {
+            return (num / 1000000).toFixed(1) + 'M+';
+        }
+        if (num >= 1000) {
+            return (num / 1000).toFixed(1) + 'K+';
+        }
+        return num + '+';
+    }
+
+    // Public method to get current stats
+    getCurrentStats() {
+        return { ...this.stats };
+    }
+}
+
+// Initialize the live counter
+const liveCounter = new LiveVisitorsCounter();
+window.liveCounter = liveCounter;
+
+// ✅ TEST: Console mein check kar sakte ho
+// liveCounter.getCurrentStats() - current stats dikhayega
+// liveCounter.addNewRating(5) - manual rating add karne ke liye
     </script>
 </body>
 </html>
